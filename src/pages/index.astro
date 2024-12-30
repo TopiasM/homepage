@@ -1,9 +1,6 @@
 ---
 import Welcome from "../components/Welcome.tsx";
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
@@ -11,8 +8,19 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style is:global>
+  :root {
+    --main-green: #386c6f;
+    --main-orange: #765a57;
+  }
+
+  ::selection {
+    background-color: var(--main-green);
+    color: var(--main-orange);
+    opacity: 20%;
+  }
+
   #hello-heading {
-    color: #315e61;
+    color: var(--main-green);
     @supports (background-clip: text) or (-webkit-background-clip: text) {
       color: transparent;
       background-clip: text;
@@ -28,5 +36,64 @@ import Layout from "../layouts/Layout.astro";
       background-size: cover;
       background-position: center;
     }
+  }
+
+  #iam-heading {
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
+      background-clip: border-box;
+      -webkit-background-clip: border-box;
+      background-image: linear-gradient(
+        25deg,
+        #27484a 0%,
+        #386c6f 10%,
+        #866562 55%,
+        #765a57 80%,
+        #6b4c49 100%
+      );
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  #hello-wave {
+    color: var(--main-orange);
+    animation: wave 1s infinite;
+    transform-origin: bottom;
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
+      color: transparent;
+      clip-path: url(#hello-wave-path);
+      background-image: linear-gradient(
+        140deg,
+        #27484a 0%,
+        #386c6f 10%,
+        #866562 55%,
+        #765a57 80%,
+        #6b4c49 100%
+      );
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  @keyframes wave {
+    0% {
+      transfrom: rotate(0deg);
+    }
+
+    33% {
+      transfrom: rotate(-15deg);
+    }
+
+    66% {
+      transform: rotate(15deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  #hello-wave-path {
+    transform: scale(0.26);
   }
 </style>
