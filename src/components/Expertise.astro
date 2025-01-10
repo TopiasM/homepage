@@ -1,0 +1,58 @@
+---
+import TerminalWindow from "phosphor-astro/TerminalWindow.astro";
+import PaintBrush from "phosphor-astro/PaintBrush.astro";
+import HardDrives from "phosphor-astro/HardDrives.astro";
+import MoreExp from "./MoreExp.astro";
+import ExpertiseContainer from "./ExpertiseContainer.astro";
+
+const expertise = [
+  {
+    icon: TerminalWindow,
+    title: "Dev Fundamentals",
+    description: `I have a solid understanding of software engineering fundamentals, such
+        as software configuration management, system design, testing, dev
+        tooling, and CLI.`,
+  },
+  {
+    icon: PaintBrush,
+    title: "Frontend Dev",
+    description: `I'm enthusiastic about creating modern and responsive web interfaces
+        that prioritize performance and usability. For this task, I love to use
+        <span class="underline decoration-cyan-500">React</span> and
+        <span class="underline decoration-orange-600">Svelte</span>.`,
+  },
+  {
+    icon: HardDrives,
+    title: "Backend Dev",
+    description: `I'm experienced in in building robust backend systems, with expertise in
+        designing and managing scalable databases and developing efficient APIs.`,
+  },
+];
+---
+
+<div class="mt-6">
+  <span class="flex">
+    <h4 class="text-3xl font-bold gradient-heading mb-4">My Expertise.</h4>
+  </span>
+  <div
+    class="grid lg:grid-cols-3 sm:grid-cols-2 border border-neutral-800 rounded"
+  >
+    {
+      expertise.map((e) => (
+        <ExpertiseContainer
+          Icon={e.icon}
+          title={e.title}
+          description={e.description}
+        />
+      ))
+    }
+    <div
+      class="texture-bg w-full p-2 hidden sm:block lg:hidden sm:border-t sm:border-l border-neutral-800 border-dashed content-center"
+    >
+      <MoreExp />
+    </div>
+  </div>
+  <div class="texture-bg w-full p-2 mt-4 block sm:hidden lg:block">
+    <MoreExp />
+  </div>
+</div>

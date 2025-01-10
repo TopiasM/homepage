@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import onobooImg from "../assets/onoboo_169_compressed.png";
+
+import ProjectContainer from "./ProjectContainer.astro";
+
+const projects = [
+  {
+    img: onobooImg,
+    imgAlt: "Screenshot of onoboo.com homepage",
+    href: "https://onoboo.com",
+    title: "Onoboo",
+    description: `Korean language learning platform, that is still under development.
+      Developed using Sveltekit, and uses Supabase for authentication and
+      PostgresSQL database.`,
+    tech: ["Sveltekit", "Supabase", "Typescript", "Tailwind CSS", "Flowbite"],
+  },
+];
+---
+
+<div class="mt-6">
+  <span class="flex">
+    <h4 class="text-3xl font-bold gradient-heading">My Projects.</h4>
+  </span>
+  {
+    projects.map((d) => (
+      <ProjectContainer
+        img={d.img}
+        imgAlt={d.imgAlt}
+        href={d.href}
+        title={d.title}
+        description={d.description}
+        tech={d.tech}
+      />
+    ))
+  }
+</div>
