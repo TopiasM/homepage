@@ -4,7 +4,7 @@ const handPath =
 
 const linkClasses =
   "underline decoration-[var(--main-green)] font-bold decoration-4 my-0.5 px-1 hover:bg-[var(--main-green)] hover:no-underline hover:rounded hover:pb-0.5 duration-100";
-const linkedInUrl = import.meta.env.PUBLIC_LINKEDIN_URL;
+const linkedinUrl = import.meta.env.PUBLIC_LINKEDIN_URL;
 ---
 
 <div
@@ -13,12 +13,15 @@ const linkedInUrl = import.meta.env.PUBLIC_LINKEDIN_URL;
   For more info check my
   <div>
     <a href="/resume" class={linkClasses}>Resume</a>
-    {" "}&{" "}
     {
-      linkedInUrl && (
-        <a href={linkedInUrl} target="_blank" class={linkClasses}>
-          LinkedIn
-        </a>
+      linkedinUrl && (
+        <Fragment>
+          {" "}
+          &{" "}
+          <a href={linkedinUrl} target="_blank" class={linkClasses}>
+            LinkedIn
+          </a>
+        </Fragment>
       )
     }
   </div>
