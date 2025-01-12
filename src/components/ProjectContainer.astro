@@ -29,9 +29,15 @@ const { img, imgAlt, href, title, description, tech } = Astro.props;
       {description}
     </p>
     <p
-      class="text-zinc-500 font-semibold mt-1 text-pretty divide-x-2 divide-zinc-700"
+      class="text-zinc-500 font-semibold mt-1 text-pretty flex flex-wrap -ml-2"
     >
-      {tech.map((t) => <span class="px-2 first:pl-0">{t}</span>)}
+      {
+        tech.map((t) => (
+          <span class="px-2 border-r-2 border-zinc-700 last:border-r-0">
+            {t}
+          </span>
+        ))
+      }
     </p>
   </div>
 </div>
