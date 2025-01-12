@@ -14,6 +14,12 @@ const linkedInUrl = import.meta.env.PUBLIC_LINKEDIN_URL;
   <div>
     <a href="/resume" class={linkClasses}>Resume</a>
     {" "}&{" "}
-    <a href={linkedInUrl} target="_blank" class={linkClasses}>LinkedIn</a>
+    {
+      linkedInUrl && (
+        <a href={linkedInUrl} target="_blank" class={linkClasses}>
+          LinkedIn
+        </a>
+      )
+    }
   </div>
 </div>
