@@ -1,16 +1,55 @@
 ---
 import Envelope from "phosphor-astro/Envelope.astro";
 import Phone from "phosphor-astro/Phone.astro";
-import LinkedinLogo from "phosphor-astro/LinkedinLogoFill.astro";
 import House from "phosphor-astro/House.astro";
+
+const contactClasses = "flex flex-row gap-1 items-center";
+
+const sectionContainer = "flex flex-col gap-1 mt-6";
+const sectionTitleClasses = "font-bold text-xl tracking-wider";
+
+const entityClasses = "font-semibold text-lg";
+const titleClasses = "font-semibold";
+const periodClasses = "font-semibold text-sm";
+
+const descriptionClasses = "leading-5 text-pretty";
 ---
 
 <div>
   <document title="Topias Martikainen Resume" author="Topias Martikainen">
-    <page>
-      <view class="flex flex-col text-zinc-300">
+    <page class="">
+      <view class="flex flex-col text-zinc-300 px-4 py-4 lg:px-14 lg:py-10">
         <view class="flex flex-col">
-          <text class="text-xl font-bold mb-1">Topias Martikainen</text>
+          <view
+            class="flex flex-col lg:flex-row lg:justify-between lg:items-baseline"
+          >
+            <text class="text-3xl font-bold mb-4">Topias Martikainen</text>
+            <view class="flex flex-wrap lg:justify-end gap-4 mb-2 lg:mb-0">
+              <view class={contactClasses}>
+                <Envelope height="20" />
+                <a
+                  href="mailto:topias.martikainen@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="break-all"
+                >
+                  topias.martikainen@gmail.com
+                </a>
+              </view>
+              <view class={contactClasses}>
+                <Phone height="20" />
+                <a href="tel:+35843281413" target="_blank" rel="noreferrer">
+                  +358 43 2181413
+                </a>
+              </view>
+              <view class={contactClasses}>
+                <House height="20" />
+                <a href="https://topias.dev" target="_blank" rel="noreferrer">
+                  topias.dev
+                </a>
+              </view>
+            </view>
+          </view>
           <text>
             Self-driven and collaborative Software Engineer with hands-on
             experience in building complex backends and highly interactive
@@ -18,253 +57,178 @@ import House from "phosphor-astro/House.astro";
             industry trends. Searching for an environment where I can challenge
             myself and work on meaningful products.
           </text>
-          <view class="flex flex-wrap justify-between mt-2">
-            <view class="flex flex-row gap-1 items-center">
-              <Envelope height="20" />
-              <a
-                href="mailto:topias.martikainen@gmail.com"
-                target="_blank"
-                rel="noreferrer"
-                style="text-decoration: none;"
-              >
-                topias.martikainen@gmail.com
-              </a>
+        </view>
+        <view class={sectionContainer}>
+          <view>
+            <text class={sectionTitleClasses}> WORK EXPERIENCE </text>
+          </view>
+          <view>
+            <text class={entityClasses}> Northern Gas and Power </text>
+            <view class="flex flex-row justify-between mt-1">
+              <text class={titleClasses}>Full Stack Developer</text>
+              <text class={periodClasses}>Jan 2022 - Apr 2024</text>
             </view>
-            <view class="flex flex-row gap-1 items-center">
-              <Phone height="20" />
-              <a
-                href="tel:+35843281413"
-                target="_blank"
-                rel="noreferrer"
-                style="text-decoration: none;"
-              >
-                +358 43 2181413
-              </a>
+            <view class="flex flex-col mt-2">
+              <view class="flex flex-row">
+                <text class={descriptionClasses}>
+                  Maintained and created new features to an ERP web application
+                  using PHP, MySQL, AngularJS, Redis, Elasticsearch.
+                </text>
+              </view>
+              <view class="flex flex-row">
+                <text class={descriptionClasses}>
+                  Developed new microservices with Typescript, Node.js,
+                  PostgreSQL, AdonisJS.
+                </text>
+              </view>
             </view>
-            <view class="flex flex-row gap-1 items-center">
-              <LinkedinLogo height="20" />
-              <a
-                href="https://linkedin.com/in/topias-martikainen"
-                target="_blank"
-                rel="noreferrer"
-                style="text-decoration: none;"
-              >
-                linkedin.com/in/topias-martikainen
-              </a>
+          </view>
+          <view class="mt-2">
+            <text class={entityClasses}>
+              Finnish Radiation and Nuclear Safety Authority
+            </text>
+            <view class="flex flex-row justify-between mt-1">
+              <text class={titleClasses}>
+                Software Developer / Project Engineer
+              </text>
+              <text class={periodClasses}>Oct 2020 – Dec 2021</text>
             </view>
-            <view class="flex flex-row gap-1 items-center">
-              <House height="20" />
-              <a
-                href="https://topias.dev"
-                target="_blank"
-                rel="noreferrer"
-                style="text-decoration: none;"
-              >
-                topias.dev
-              </a>
+            <view class="flex flex-col mt-2">
+              <view class="flex flex-row">
+                <text class={descriptionClasses}>
+                  Developed a highly interactive web application that monitors
+                  radiation levels across Finland using Typescript, React,
+                  Leaflet, Scala, Play Framework, MySQL, MongoDB.
+                </text>
+              </view>
+            </view>
+          </view>
+          <view class="mt-2">
+            <text class={entityClasses}>PUFFUL Inc.</text>
+            <view class="flex flex-row justify-between mt-1">
+              <text class={titleClasses}>Backend Developer</text>
+              <text class={periodClasses}>Sep 2017 – Aug 2019</text>
+            </view>
+            <view class="flex flex-col mt-2">
+              <view class="flex flex-row">
+                <text class={descriptionClasses}>
+                  REST API and Web development using AWS (EC2, s3, Lambda),
+                  MySQL, PHP, Laravel, Redis, JavaScript, HTML/CSS, Vue.js.
+                </text>
+              </view>
             </view>
           </view>
         </view>
-        <view
-          class="flex flex-col gap-2 mt-4"
-          style="display: flex; flex-direction: column; gap: 6pt; margin-top: 15pt;"
-        >
+        <view class={sectionContainer}>
           <view>
-            <text class="font-bold spacing tracking-wider">
-              WORK EXPERIENCE
-            </text>
+            <text class={sectionTitleClasses}>EDUCATION</text>
           </view>
           <view>
-            <text class="font-semibold"> Northern Gas and Power </text>
-            <view class="flex flex-row justify-between mt-2">
-              <text>Full Stack Developer</text>
-              <text class="font-semibold text-sm">Jan 2022 - Apr 2024</text>
+            <text class={entityClasses}>
+              JAMK University of Applied Sciences
+            </text>
+            <view class="flex flex-row justify-between mt-1">
+              <text class={titleClasses}>Media Engineering (B.Eng)</text>
+              <text class={periodClasses}>Aug 2013 - Jun 2017</text>
             </view>
-            <!-- CONTINUE FROM HERE -->
-            <view
-              style="display: flex; flex-direction: column; margin-top: 4.5pt;"
-              ><view style="display: flex; flex-direction: row;"
-                ><text
-                  style="color: rgb(23, 23, 23); font-weight: normal; line-height: 1.3; flex-grow: 1; flex-basis: 0px;"
-                  >Maintaining and creating new features to an ERP web
-                  application using PHP, MySQL, AngularJS, Redis, Elasticsearch</text
-                ></view
-              ><view style="display: flex; flex-direction: row;"
-                ><text
-                  style="color: rgb(23, 23, 23); font-weight: normal; line-height: 1.3; flex-grow: 1; flex-basis: 0px;"
-                  >Building new microservices with Typescript, Node.js,
-                  PostgreSQL, AdonisJS</text
-                ></view
-              ></view
-            ></view
-          ><view style="margin-top: 6pt;"
-            ><text style="color: rgb(23, 23, 23); font-weight: bold;"
-              >Finnish Radiation and Nuclear Safety Authority</text
-            ><view
-              style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 4.5pt;"
-              ><text style="color: rgb(23, 23, 23); font-weight: normal;"
-                >Software Developer / Project Engineer</text
-              ><text style="color: rgb(23, 23, 23); font-weight: normal;"
-                >Oct 2020 – Dec 2021</text
-              ></view
-            ><view
-              style="display: flex; flex-direction: column; margin-top: 4.5pt;"
-              ><view style="display: flex; flex-direction: row;"
-                ><text
-                  style="color: rgb(23, 23, 23); font-weight: normal; line-height: 1.3; flex-grow: 1; flex-basis: 0px;"
-                  >Developing a highly interactive web application using
-                  Typescript, React, Scala, Play Framework, MySQL, MongoDB</text
-                ></view
-              ></view
-            ></view
-          ><view style="margin-top: 6pt;"
-            ><text style="color: rgb(23, 23, 23); font-weight: bold;"
-              >PUFFUL Inc.</text
-            ><view
-              style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 4.5pt;"
-              ><text style="color: rgb(23, 23, 23); font-weight: normal;"
-                >Backend Developer</text
-              ><text style="color: rgb(23, 23, 23); font-weight: normal;"
-                >Sep 2017 – Aug 2019</text
-              ></view
-            ><view
-              style="display: flex; flex-direction: column; margin-top: 4.5pt;"
-              ><view style="display: flex; flex-direction: row;"
-                ><text
-                  style="color: rgb(23, 23, 23); font-weight: normal; line-height: 1.3; flex-grow: 1; flex-basis: 0px;"
-                  >REST API and Web development using AWS (EC2, s3, Lambda),
-                  MySQL, PHP, Laravel, Redis, JavaScript, HTML/CSS, Vue.js.</text
-                ></view
-              ></view
-            ></view
-          ></view
-        ><view
-          style="display: flex; flex-direction: column; gap: 6pt; margin-top: 15pt;"
-          ><view
-            style="display: flex; flex-direction: row; align-items: center;"
-            ><view
-              style="height: 3.75pt; width: 30pt; background-color: rgb(51, 51, 51); margin-right: 10.5pt;"
-            ></view><text style="font-weight: bold; letter-spacing: 0.3pt;"
-              >EDUCATION</text
-            ></view
-          ><view
-            ><text style="color: rgb(23, 23, 23); font-weight: bold;"
-              >JAMK University of Applied Sciences</text
-            ><view
-              style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 4.5pt;"
-              ><text style="color: rgb(23, 23, 23); font-weight: normal;"
-                >Media Engineering (B.Eng)</text
-              ><text style="color: rgb(23, 23, 23); font-weight: normal;"
-                >Aug 2013 - Jun 2017</text
-              ></view
-            ></view
-          ></view
-        ><view
-          style="display: flex; flex-direction: column; gap: 6pt; margin-top: 15pt;"
-          ><view
-            style="display: flex; flex-direction: row; align-items: center;"
-            ><view
-              style="height: 3.75pt; width: 30pt; background-color: rgb(51, 51, 51); margin-right: 10.5pt;"
-            ></view><text style="font-weight: bold; letter-spacing: 0.3pt;"
-              >ACHIEVEMENTS</text
-            ></view
-          ><view
-            ><view
-              style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 1.5pt;"
-              ><text style="color: rgb(23, 23, 23); font-weight: bold;"
-                >AI + Cloud track by Naver Cloud Platform winner</text
-              ><text style="color: rgb(23, 23, 23); font-weight: normal;"
-                >JunctionX Seoul 2019</text
-              ></view
-            ><view
-              style="display: flex; flex-direction: column; margin-top: 1.5pt;"
-              ><view style="display: flex; flex-direction: row;"
-                ><text
-                  style="color: rgb(23, 23, 23); font-weight: bold; padding-left: 6pt; padding-right: 6pt; line-height: 1.3;"
-                  >•</text
-                ><text
-                  style="color: rgb(23, 23, 23); font-weight: normal; line-height: 1.3; flex-grow: 1; flex-basis: 0px;"
-                  >Part of a 5-member team</text
-                ></view
-              ></view
-            ></view
-          ></view
-        ><view
-          style="display: flex; flex-direction: column; gap: 6pt; margin-top: 15pt;"
-          ><view
-            style="display: flex; flex-direction: row; align-items: center;"
-            ><view
-              style="height: 3.75pt; width: 30pt; background-color: rgb(51, 51, 51); margin-right: 10.5pt;"
-            ></view><text style="font-weight: bold; letter-spacing: 0.3pt;"
-              >SKILLS</text
-            ></view
-          ><view style="display: flex; flex-direction: column;"
-            ><view style="display: flex; flex-direction: row;"
-              ><text
-                style="color: rgb(23, 23, 23); font-weight: normal; line-height: 1.3; flex-grow: 1; flex-basis: 0px;"
-                >Programming languages: JavaScript, TypeScript, PHP, SQL, Go,
-                Scala, HTML, CSS</text
-              ></view
-            ><view style="display: flex; flex-direction: row;"
-              ><text
-                style="color: rgb(23, 23, 23); font-weight: normal; line-height: 1.3; flex-grow: 1; flex-basis: 0px;"
-                >Databases: MySQL, PostgreSQL, DynamoDB, MongoDB,</text
-              ></view
-            ><view style="display: flex; flex-direction: row;"
-              ><text
-                style="color: rgb(23, 23, 23); font-weight: normal; line-height: 1.3; flex-grow: 1; flex-basis: 0px;"
-                >Cloud computing platforms: AWS, GCP, Supabase</text
-              ></view
-            ><view style="display: flex; flex-direction: row;"
-              ><text
-                style="color: rgb(23, 23, 23); font-weight: normal; line-height: 1.3; flex-grow: 1; flex-basis: 0px;"
-                >Libraries, frameworks &amp; tools: Laravel, Node.js, Serverless
-                Framework, Redis, Git, Vue.js, React.js, Bootstrap, Docker,
-                AngularJS, RabbitMQ, Express.js, AdonisJS</text
-              ></view
-            ><view style="display: flex; flex-direction: row;"
-              ><text
-                style="color: rgb(23, 23, 23); font-weight: normal; line-height: 1.3; flex-grow: 1; flex-basis: 0px;"
-                >Industry Knowledge: API / Server / Web development, SCRUM,
-                OpenAPI, REST, GraphQL, Microservice architecture, Linux, Unit /
-                Integration testing, DDD, CI/CD</text
-              ></view
-            ></view
-          ></view
-        ><view
-          style="display: flex; flex-direction: column; gap: 6pt; margin-top: 15pt;"
-          ><view
-            style="display: flex; flex-direction: row; align-items: center;"
-            ><view
-              style="height: 3.75pt; width: 30pt; background-color: rgb(51, 51, 51); margin-right: 10.5pt;"
-            ></view><text style="font-weight: bold; letter-spacing: 0.3pt;"
-              >LANGUAGES</text
-            ></view
-          ><view style="display: flex; flex-direction: column;"
-            ><view style="display: flex; flex-direction: row;"
-              ><text
-                style="color: rgb(23, 23, 23); font-weight: normal; line-height: 1.3; flex-grow: 1; flex-basis: 0px;"
-                >Finnish: Native</text
-              ></view
-            ><view style="display: flex; flex-direction: row;"
-              ><text
-                style="color: rgb(23, 23, 23); font-weight: normal; line-height: 1.3; flex-grow: 1; flex-basis: 0px;"
-                >English: Full professional proficiency</text
-              ></view
-            ><view style="display: flex; flex-direction: row;"
-              ><text
-                style="color: rgb(23, 23, 23); font-weight: normal; line-height: 1.3; flex-grow: 1; flex-basis: 0px;"
-                >Korean:&nbsp;Limited Working Proficiency</text
-              ></view
-            ><view style="display: flex; flex-direction: row;"
-              ><text
-                style="color: rgb(23, 23, 23); font-weight: normal; line-height: 1.3; flex-grow: 1; flex-basis: 0px;"
-                >Swedish: Basics</text
-              ></view
-            ></view
-          ></view
-        ></view
-      ></page
-    >
+            <view class="flex flex-col mt-2">
+              <view class="flex flex-row">
+                <text class={descriptionClasses}>
+                  Succesfully did courses related to Software Engineering and
+                  Web Services. <br />
+                  Completed 2 internships.
+                </text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class={sectionContainer}>
+          <view>
+            <text class={sectionTitleClasses}> ACHIEVEMENTS </text>
+          </view>
+          <view>
+            <text class={entityClasses}>
+              AI + Cloud track by Naver Cloud Platform winner
+            </text>
+            <view class="flex flex-row justify-between mt-1">
+              <text>JunctionX Seoul 2019</text>
+            </view>
+            <view class="flex flex-col mt-1">
+              <view class="flex flex-row">
+                <text class={descriptionClasses}>
+                  Part of a 5-member team
+                </text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class={sectionContainer}>
+          <view>
+            <text class={sectionTitleClasses}> SKILLS </text>
+          </view>
+          <view class="flex flex-col mt-1">
+            <view class="flex flex-row">
+              <text class={descriptionClasses}>
+                <b>Programming languages:</b><br />
+                TypeScript, JavaScript, PHP, SQL, Go, Scala, HTML, CSS
+              </text>
+            </view>
+            <view class="flex flex-row mt-0.5">
+              <text class={descriptionClasses}>
+                <b>Databases:</b><br />
+                MySQL, PostgreSQL, DynamoDB, MongoDB, Redis
+              </text>
+            </view>
+            <view class="flex flex-row mt-0.5">
+              <text class={descriptionClasses}>
+                <b>Cloud computing platforms:</b><br />
+                AWS, GCP, Azure
+              </text>
+            </view>
+            <view class="flex flex-row mt-0.5">
+              <text class={descriptionClasses}>
+                <b>Libraries / Frameworks / tools:</b><br />
+                Git, React, Svelte, Next.js, Tailwind CSS, Node.js, Docker, Laravel,
+                Express.js, Firebase, Supabase
+              </text>
+            </view>
+            <view class="flex flex-row mt-0.5">
+              <text class={descriptionClasses}>
+                <b>Industry Knowledge:</b><br />
+                Server / Web development, SCRUM, OpenAPI, REST, GraphQL, Microservice
+                architecture, Software testing, DDD, CI/CD
+              </text>
+            </view>
+          </view>
+        </view>
+        <view class={sectionContainer}>
+          <view>
+            <text class={sectionTitleClasses}> LANGUAGES </text>
+          </view>
+          <view class="flex flex-col mt-2">
+            <view class="flex flex-row">
+              <text class={descriptionClasses}>
+                <b>Finnish:</b> Native
+              </text>
+            </view>
+            <view class="flex flex-row mt-0.5">
+              <text class={descriptionClasses}>
+                <b>English:</b> Full professional proficiency
+              </text>
+            </view>
+            <view class="flex flex-row mt-0.5">
+              <text class={descriptionClasses}>
+                <b>Korean:</b> Limited Working Proficiency
+              </text>
+            </view>
+            <view class="flex flex-row mt-0.5">
+              <text class={descriptionClasses}>
+                <b>Swedish:</b> Basics
+              </text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </page>
   </document>
 </div>
