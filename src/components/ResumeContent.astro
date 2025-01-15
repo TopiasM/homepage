@@ -9,7 +9,8 @@ const sectionContainer = "flex flex-col gap-1 mt-6";
 const sectionTitleClasses = "font-bold text-xl tracking-wider";
 
 const entityClasses = "font-semibold text-lg";
-const titleClasses = "font-semibold";
+const infoContainerClasses = "flex flex-wrap justify-between mt-1 items-center";
+const titleClasses = "font-semibold mr-16";
 const periodClasses = "font-semibold text-sm";
 
 const descriptionClasses = "leading-5 text-pretty";
@@ -24,7 +25,9 @@ const descriptionClasses = "leading-5 text-pretty";
             class="flex flex-col lg:flex-row lg:justify-between lg:items-baseline"
           >
             <text class="text-3xl font-bold mb-4">Topias Martikainen</text>
-            <view class="flex flex-wrap lg:justify-end gap-4 mb-2 lg:mb-0">
+            <view
+              class="flex flex-wrap lg:justify-end gap-x-4 gap-y-1 mb-2 lg:mb-0"
+            >
               <view class={contactClasses}>
                 <Envelope height="20" />
                 <a
@@ -64,7 +67,7 @@ const descriptionClasses = "leading-5 text-pretty";
           </view>
           <view>
             <text class={entityClasses}> Northern Gas and Power </text>
-            <view class="flex flex-row justify-between mt-1">
+            <view class={infoContainerClasses}>
               <text class={titleClasses}>Full Stack Developer</text>
               <text class={periodClasses}>Jan 2022 - Apr 2024</text>
             </view>
@@ -87,7 +90,7 @@ const descriptionClasses = "leading-5 text-pretty";
             <text class={entityClasses}>
               Finnish Radiation and Nuclear Safety Authority
             </text>
-            <view class="flex flex-row justify-between mt-1">
+            <view class={infoContainerClasses}>
               <text class={titleClasses}>
                 Software Developer / Project Engineer
               </text>
@@ -105,7 +108,7 @@ const descriptionClasses = "leading-5 text-pretty";
           </view>
           <view class="mt-2">
             <text class={entityClasses}>PUFFUL Inc.</text>
-            <view class="flex flex-row justify-between mt-1">
+            <view class={infoContainerClasses}>
               <text class={titleClasses}>Backend Developer</text>
               <text class={periodClasses}>Sep 2017 – Aug 2019</text>
             </view>
@@ -127,7 +130,7 @@ const descriptionClasses = "leading-5 text-pretty";
             <text class={entityClasses}>
               JAMK University of Applied Sciences
             </text>
-            <view class="flex flex-row justify-between mt-1">
+            <view class={infoContainerClasses}>
               <text class={titleClasses}>Media Engineering (B.Eng)</text>
               <text class={periodClasses}>Aug 2013 - Jun 2017</text>
             </view>
