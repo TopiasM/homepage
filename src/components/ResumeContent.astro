@@ -13,12 +13,12 @@ const infoContainerClasses = "flex flex-wrap justify-between mt-1 items-center";
 const titleClasses = "font-semibold mr-16";
 const periodClasses = "font-semibold text-sm";
 
-const descriptionClasses = "leading-5 text-pretty";
+const descriptionClasses = "leading-6 text-pretty";
 ---
 
 <div>
   <document title="Topias Martikainen Resume" author="Topias Martikainen">
-    <page class="">
+    <page>
       <view class="flex flex-col text-zinc-300 px-4 py-4 lg:px-14 lg:py-10">
         <view class="flex flex-col">
           <view
@@ -53,7 +53,7 @@ const descriptionClasses = "leading-5 text-pretty";
               </view>
             </view>
           </view>
-          <text>
+          <text class={descriptionClasses}>
             Self-driven and collaborative Software Engineer with hands-on
             experience in building complex backends and highly interactive
             websites. A fast learner with a passion to keep up with the latest

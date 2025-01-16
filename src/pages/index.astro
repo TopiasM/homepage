@@ -4,9 +4,13 @@ import Projects from "../components/Projects.astro";
 import Expertise from "../components/Expertise.astro";
 import Layout from "../layouts/Layout.astro";
 import { pageClasses } from "../consts";
+
+const title = "Topias Martikainen - Software Engineer";
+const description =
+  "I'm passionate about developing performant and well-designed web experiences";
 ---
 
-<Layout>
+<Layout {title} {description}>
   <div class={pageClasses}>
     <Welcome />
     <Expertise />
@@ -85,9 +89,5 @@ import { pageClasses } from "../consts";
 
   #hello-wave-path {
     transform: scale(0.26);
-  }
-
-  .texture-bg {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23262626' fill-opacity='0.8' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   }
 </style>

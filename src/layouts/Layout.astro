@@ -1,66 +1,72 @@
+---
+const { title, description } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta
-      name="description"
-      content="I enjoy developing performant and well-designed web experiences"
-    />
-    <title>Topias Martikainen - Software Engineer</title>
+    <meta name="description" content={description} />
+    <title>{title}</title>
   </head>
+
   <body class="bg-zinc-950 mb-8">
     <div id="grain"></div>
     <slot />
   </body>
+
+  <style is:global>
+    body {
+      margin: 0;
+      max-width: 100vw;
+      min-height: 100vh;
+    }
+
+    #grain {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.29' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.1;
+      -webkit-animation: noise 1s steps(5) infinite;
+      animation: noise 1s steps(5) infinite;
+      pointer-events: none;
+      z-index: 9;
+    }
+
+    @keyframes noise {
+      0% {
+        background-position: 0%;
+      }
+
+      100% {
+        background-position: 99%;
+      }
+    }
+
+    .gradient-heading {
+      color: var(--main-green);
+      @supports (background-clip: text) or (-webkit-background-clip: text) {
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(
+          15deg,
+          #27484a 0%,
+          #386c6f 10%,
+          #866562 55%,
+          #765a57 80%,
+          #6b4c49 100%
+        );
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    .texture-bg {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23262626' fill-opacity='0.8' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    }
+  </style>
 </html>
-
-<style is:global>
-  body {
-    margin: 0;
-    max-width: 100vw;
-    min-height: 100vh;
-  }
-
-  #grain {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.29' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.1;
-    -webkit-animation: noise 1s steps(5) infinite;
-    animation: noise 1s steps(5) infinite;
-    pointer-events: none;
-    z-index: 9;
-  }
-
-  @keyframes noise {
-    0% {
-      background-position: 0%;
-    }
-
-    100% {
-      background-position: 99%;
-    }
-  }
-
-  .gradient-heading {
-    color: var(--main-green);
-    @supports (background-clip: text) or (-webkit-background-clip: text) {
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-      background-image: linear-gradient(
-        15deg,
-        #27484a 0%,
-        #386c6f 10%,
-        #866562 55%,
-        #765a57 80%,
-        #6b4c49 100%
-      );
-      background-size: cover;
-      background-position: center;
-    }
-  }
-</style>
