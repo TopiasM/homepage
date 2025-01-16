@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import CaretLeft from "phosphor-astro/CaretLeft.astro";
 import ResumeContent from "../components/ResumeContent.astro";
+import CaretLeft from "phosphor-astro/CaretLeft.astro";
 import DownloadSimple from "phosphor-astro/DownloadSimple.astro";
 
 const title = "Topias Martikainen - Resume";
@@ -31,23 +31,14 @@ const description = "My resume highlighting my experience";
 
 <Layout {title} {description}>
   <div class="max-w-5xl m-auto px-[calc(2vw+0.5rem)] pt-8 xl:px-4">
-    <!--
-    <span class="flex">
-      <h4
-        class="text-4xl mx-auto font-semibold tracking-wide gradient-heading mt-2"
-      >
-        Resume
-      </h4>
-    </span>
-    -->
     <div
       class="flex flex-row justify-between px-0.5 mb-2 m-auto flex-wrap gap-2"
     >
       <a
         href="/"
-        class="text-zinc-400 font-semibold text-sm flex flex-row items-center hover:text-zinc-300 w-fit"
+        class="text-zinc-400 font-semibold text-sm flex flex-row items-end hover:text-zinc-300 w-fit"
       >
-        <CaretLeft height="20" font-weight={700} class="mt-0.5" />
+        <CaretLeft height="18" font-weight={700} />
         Back to landing page
       </a>
       <div class="flex flex-row items-center">
@@ -80,9 +71,9 @@ const description = "My resume highlighting my experience";
     </div>
     <div class="flex">
       <button
-        class="flex flex-row text-zinc-400 font-semibold hover:text-zinc-300 m-auto px-4 py-2 mt-4 gap-2 item-center"
+        class="flex flex-row text-zinc-400 font-semibold hover:text-zinc-300 m-auto px-4 py-2 mt-4 gap-2 items-end"
       >
-        <DownloadSimple height="20" class="mt-0.5" />
+        <DownloadSimple height="22" />
         Download PDF
       </button>
     </div>
