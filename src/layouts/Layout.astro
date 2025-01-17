@@ -17,6 +17,15 @@ const { title, description } = Astro.props;
   </body>
 
   <style is:global>
+    :root {
+      --main-green: #386c6f;
+    }
+
+    ::selection {
+      background-color: var(--main-green);
+      color: #a29b9a;
+    }
+
     body {
       margin: 0;
       max-width: 100vw;

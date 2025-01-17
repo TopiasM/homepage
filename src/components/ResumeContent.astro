@@ -5,11 +5,14 @@ import House from "phosphor-astro/House.astro";
 
 const contactClasses = "flex flex-row gap-1 items-center";
 
-const sectionContainer = "flex flex-col gap-1 mt-6";
-const sectionTitleClasses = "font-bold text-xl tracking-wider";
+const sectionContainerClasses = "flex flex-col gap-1 mt-6";
+const sectionTitleContainerClasses = "flex flex-row items-center";
+const sectionTitleClasses =
+  "font-bold text-xl tracking-wider whitespace-nowrap";
+const sectionLineClasses = "bg-neutral-900 h-2 rounded w-full ml-3";
 
 const entityClasses = "font-semibold text-lg";
-const infoContainerClasses = "flex flex-wrap justify-between mt-1 items-center";
+const infoContainerClasses = "flex flex-wrap justify-between items-center";
 const titleClasses = "font-semibold mr-16";
 const periodClasses = "font-semibold text-sm";
 
@@ -19,14 +22,14 @@ const descriptionClasses = "leading-6 text-pretty";
 <div>
   <document title="Topias Martikainen Resume" author="Topias Martikainen">
     <page>
-      <view class="flex flex-col text-zinc-300 px-4 py-4 lg:px-14 lg:py-10">
+      <view class="flex flex-col text-zinc-300 px-4 py-4 md:px-14 md:py-10">
         <view class="flex flex-col">
           <view
-            class="flex flex-col lg:flex-row lg:justify-between lg:items-baseline"
+            class="flex flex-col md:flex-row md:justify-between md:items-baseline"
           >
-            <text class="text-3xl font-bold mb-4">Topias Martikainen</text>
+            <text class="text-3xl font-bold mb-4 mr-8">Topias Martikainen</text>
             <view
-              class="flex flex-wrap lg:justify-end gap-x-4 gap-y-1 mb-2 lg:mb-0"
+              class="flex flex-wrap md:justify-end gap-x-4 gap-y-1 mb-2 md:mb-0"
             >
               <view class={contactClasses}>
                 <Envelope height="20" />
@@ -37,12 +40,6 @@ const descriptionClasses = "leading-6 text-pretty";
                   class="break-all"
                 >
                   topias.martikainen@gmail.com
-                </a>
-              </view>
-              <view class={contactClasses}>
-                <Phone height="20" />
-                <a href="tel:+35843281413" target="_blank" rel="noreferrer">
-                  +358 43 2181413
                 </a>
               </view>
               <view class={contactClasses}>
@@ -61,9 +58,10 @@ const descriptionClasses = "leading-6 text-pretty";
             myself and work on meaningful products.
           </text>
         </view>
-        <view class={sectionContainer}>
-          <view>
-            <text class={sectionTitleClasses}> WORK EXPERIENCE </text>
+        <view class={sectionContainerClasses}>
+          <view class={sectionTitleContainerClasses}>
+            <text class={sectionTitleClasses}>WORK EXPERIENCE</text>
+            <span class={sectionLineClasses}></span>
           </view>
           <view>
             <text class={entityClasses}> Northern Gas and Power </text>
@@ -71,7 +69,7 @@ const descriptionClasses = "leading-6 text-pretty";
               <text class={titleClasses}>Full Stack Developer</text>
               <text class={periodClasses}>Jan 2022 - Apr 2024</text>
             </view>
-            <view class="flex flex-col mt-2">
+            <view class="flex flex-col mt-1">
               <view class="flex flex-row">
                 <text class={descriptionClasses}>
                   Maintained and created new features to an ERP web application
@@ -86,7 +84,7 @@ const descriptionClasses = "leading-6 text-pretty";
               </view>
             </view>
           </view>
-          <view class="mt-2">
+          <view class="mt-3">
             <text class={entityClasses}>
               Finnish Radiation and Nuclear Safety Authority
             </text>
@@ -96,7 +94,7 @@ const descriptionClasses = "leading-6 text-pretty";
               </text>
               <text class={periodClasses}>Oct 2020 – Dec 2021</text>
             </view>
-            <view class="flex flex-col mt-2">
+            <view class="flex flex-col mt-1">
               <view class="flex flex-row">
                 <text class={descriptionClasses}>
                   Developed a highly interactive web application that monitors
@@ -106,13 +104,13 @@ const descriptionClasses = "leading-6 text-pretty";
               </view>
             </view>
           </view>
-          <view class="mt-2">
+          <view class="mt-3">
             <text class={entityClasses}>PUFFUL Inc.</text>
             <view class={infoContainerClasses}>
               <text class={titleClasses}>Backend Developer</text>
               <text class={periodClasses}>Sep 2017 – Aug 2019</text>
             </view>
-            <view class="flex flex-col mt-2">
+            <view class="flex flex-col mt-1">
               <view class="flex flex-row">
                 <text class={descriptionClasses}>
                   REST API and Web development using AWS (EC2, s3, Lambda),
@@ -122,9 +120,10 @@ const descriptionClasses = "leading-6 text-pretty";
             </view>
           </view>
         </view>
-        <view class={sectionContainer}>
-          <view>
+        <view class={sectionContainerClasses}>
+          <view class={sectionTitleContainerClasses}>
             <text class={sectionTitleClasses}>EDUCATION</text>
+            <span class={sectionLineClasses}></span>
           </view>
           <view>
             <text class={entityClasses}>
@@ -145,9 +144,10 @@ const descriptionClasses = "leading-6 text-pretty";
             </view>
           </view>
         </view>
-        <view class={sectionContainer}>
-          <view>
+        <view class={sectionContainerClasses}>
+          <view class={sectionTitleContainerClasses}>
             <text class={sectionTitleClasses}> ACHIEVEMENTS </text>
+            <span class={sectionLineClasses}></span>
           </view>
           <view>
             <text class={entityClasses}>
@@ -165,15 +165,23 @@ const descriptionClasses = "leading-6 text-pretty";
             </view>
           </view>
         </view>
-        <view class={sectionContainer}>
-          <view>
+        <view class={sectionContainerClasses}>
+          <view class={sectionTitleContainerClasses}>
             <text class={sectionTitleClasses}> SKILLS </text>
+            <span class={sectionLineClasses}></span>
           </view>
           <view class="flex flex-col mt-1">
             <view class="flex flex-row">
               <text class={descriptionClasses}>
                 <b>Programming languages:</b><br />
-                TypeScript, JavaScript, PHP, SQL, Go, Scala, HTML, CSS
+                TypeScript, JavaScript, PHP, SQL, Go, Scala, HTML / CSS
+              </text>
+            </view>
+            <view class="flex flex-row mt-0.5">
+              <text class={descriptionClasses}>
+                <b>Libraries / Frameworks / tools:</b><br />
+                Git, React, Svelte, Next.js, Tailwind CSS, Node.js, Docker, RabbitMQ,
+                Laravel, Express.js, Firebase, Supabase
               </text>
             </view>
             <view class="flex flex-row mt-0.5">
@@ -190,13 +198,6 @@ const descriptionClasses = "leading-6 text-pretty";
             </view>
             <view class="flex flex-row mt-0.5">
               <text class={descriptionClasses}>
-                <b>Libraries / Frameworks / tools:</b><br />
-                Git, React, Svelte, Next.js, Tailwind CSS, Node.js, Docker, Laravel,
-                Express.js, Firebase, Supabase
-              </text>
-            </view>
-            <view class="flex flex-row mt-0.5">
-              <text class={descriptionClasses}>
                 <b>Industry Knowledge:</b><br />
                 Server / Web development, SCRUM, OpenAPI, REST, GraphQL, Microservice
                 architecture, Software testing, DDD, CI/CD
@@ -204,9 +205,10 @@ const descriptionClasses = "leading-6 text-pretty";
             </view>
           </view>
         </view>
-        <view class={sectionContainer}>
-          <view>
+        <view class={sectionContainerClasses}>
+          <view class={sectionTitleContainerClasses}>
             <text class={sectionTitleClasses}> LANGUAGES </text>
+            <span class={sectionLineClasses}></span>
           </view>
           <view class="flex flex-col mt-2">
             <view class="flex flex-row">

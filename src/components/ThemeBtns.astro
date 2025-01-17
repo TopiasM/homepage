@@ -1,0 +1,40 @@
+<script>
+  let params = new URLSearchParams(document.location.search);
+  const theme = params.get("theme") ?? "dark";
+  if (theme === "light") {
+    const resume = document.getElementById("resume");
+    resume!.style.setProperty("filter", "invert(1)");
+  }
+
+  const setTheme = (event: Event) => {
+    const id = (event.currentTarget as HTMLButtonElement).id;
+    const newTheme = id.split("-")[0];
+    if (newTheme !== theme) document.location = `/resume?theme=${newTheme}`;
+  };
+
+  const btns = document.querySelectorAll("[id$='-theme-btn']");
+  btns.forEach((btn) => {
+    btn.addEventListener("click", setTheme);
+    if (btn.id.includes(theme))
+      btn.classList.add("ring-1", "ring-[var(--main-green)]");
+  });
+</script>
+
+<div class="flex flex-row items-center">
+  <div class="flex flex-row rounded-full p-1 m-auto w-min z-10 relative gap-2">
+    <button
+      aria-label="Dark Theme button"
+      class="rounded-full size-8 bg-neutral-950 text-zinc-300 font-semibold text-sm border-2 border-gray-700 hover:brightness-150 duration-150 select-none"
+      id="dark-theme-btn"
+    >
+      Aa
+    </button>
+    <button
+      aria-label="Light Theme button"
+      class="rounded-full size-8 bg-zinc-300 text-zinc-800 font-semibold text-sm border-2 border-gray-500 hover:brightness-150 duration-150 select-none"
+      id="light-theme-btn"
+    >
+      Aa
+    </button>
+  </div>
+</div>

@@ -13,8 +13,8 @@ const { Icon, title, description } = Astro.props;
   class="w-full sm:px-5 p-3 sm:border sm:border-dashed sm:border-neutral-800"
 >
   <h5 class="flex flex-row text-2xl text-zinc-300 font-semibold items-center">
-    <Icon class="mt-1 bg-[var(--main-green)] rounded p-0.5 size-6" />
-    <span class="ml-2 gradient-heading mt-1">{title}</span>
+    <Icon class="bg-[var(--main-green)] rounded p-0.5 size-6" />
+    <span class="ml-2 gradient-heading">{title}</span>
   </h5>
   <p class="text-zinc-300 text-lg mt-1 text-pretty pr-4">
     <Fragment set:html={description} />

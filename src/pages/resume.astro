@@ -3,65 +3,23 @@ import Layout from "../layouts/Layout.astro";
 import ResumeContent from "../components/ResumeContent.astro";
 import CaretLeft from "phosphor-astro/CaretLeft.astro";
 import DownloadSimple from "phosphor-astro/DownloadSimple.astro";
+import ThemeBtns from "../components/ThemeBtns.astro";
 
 const title = "Topias Martikainen - Resume";
 const description = "My resume highlighting my experience";
 ---
 
-<script>
-  let params = new URLSearchParams(document.location.search);
-  const theme = params.get("theme") ?? "dark";
-  if (theme == "light") {
-    const resume = document.getElementById("resume");
-    resume!.style.setProperty("filter", "invert(1)");
-  }
-
-  const setTheme = (event: Event) => {
-    const id = (event.currentTarget as HTMLButtonElement).id;
-    const clickedTheme = id.split("-")[0];
-    if (clickedTheme != theme)
-      document.location = `/resume?theme=${clickedTheme}`;
-  };
-
-  const btns = document.querySelectorAll("[id$='-theme-btn']");
-  btns.forEach((btn) => {
-    btn.addEventListener("click", setTheme);
-  });
-</script>
-
 <Layout {title} {description}>
   <div class="max-w-5xl m-auto px-[calc(2vw+0.5rem)] pt-8 xl:px-4">
-    <div
-      class="flex flex-row justify-between px-0.5 mb-2 m-auto flex-wrap gap-2"
-    >
+    <div class="flex flex-row justify-between mb-1.5 m-auto flex-wrap gap-2">
       <a
         href="/"
-        class="text-zinc-400 font-semibold text-sm flex flex-row items-center hover:text-zinc-300 w-fit"
+        class="text-zinc-400 font-semibold text-sm flex flex-row items-center hover:text-zinc-300 w-fit duration-150 gap-0.5"
       >
         <CaretLeft height="18" font-weight={700} />
-        <p class="leading-[1.2]">Back to landing page</p>
+        <p class="leading-[1.2]">Landing page</p>
       </a>
-      <div class="flex flex-row items-center">
-        <p class="text-zinc-400 mr-1 font-semibold text-sm">Theme:</p>
-        <div
-          class="flex flex-row rounded-full p-1 m-auto w-min z-10 relative gap-2"
-        >
-          <button
-            aria-label="Dark Theme button"
-            class="rounded-full size-8 bg-neutral-950 text-zinc-300 font-semibold text-sm border-2 border-gray-700 hover:opacity-70"
-            id="dark-theme-btn"
-          >
-            Aa
-          </button>
-          <button
-            aria-label="Light Theme button"
-            class="rounded-full size-8 bg-zinc-300 text-zinc-800 font-semibold text-sm border-2 border-gray-500 hover:opacity-70"
-            id="light-theme-btn"
-          >
-            Aa
-          </button>
-        </div>
-      </div>
+      <ThemeBtns />
     </div>
     <div
       class="border-2 border-neutral-800 rounded w-full z-10 bg-neutral-950 relative"
@@ -69,9 +27,9 @@ const description = "My resume highlighting my experience";
     >
       <ResumeContent />
     </div>
-    <div class="flex">
+    <div class="flex texture-bg mt-4 rounded">
       <button
-        class="flex flex-row text-zinc-400 font-semibold hover:text-zinc-300 m-auto px-4 py-2 mt-4 gap-2 items-end"
+        class="flex flex-row text-zinc-400 font-semibold hover:text-zinc-300 m-auto px-4 py-3 gap-2 items-end duration-150"
       >
         <DownloadSimple height="22" />
         Download PDF
