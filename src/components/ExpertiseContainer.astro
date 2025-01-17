@@ -1,11 +1,6 @@
 ---
-import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import type { ExpertiseProps as Props } from "../types";
 
-interface Props {
-  Icon: AstroComponentFactory;
-  title: string;
-  description: string;
-}
 const { Icon, title, description } = Astro.props;
 ---
 

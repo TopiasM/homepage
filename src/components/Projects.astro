@@ -1,9 +1,10 @@
 ---
 import onobooImg from "../assets/onoboo_169_compressed.png";
-
+import homepageImg from "../assets/homepage_169_compressed.png";
 import ProjectContainer from "./ProjectContainer.astro";
+import type { Project } from "../types";
 
-const projects = [
+const projects: Project[] = [
   {
     img: onobooImg,
     imgAlt: "Screenshot of onoboo.com homepage",
@@ -19,6 +20,15 @@ const projects = [
       "Flowbite",
     ],
   },
+  {
+    img: homepageImg,
+    imgAlt: "Screenshot of topias.dev",
+    href: "https://topias.dev",
+    title: "topias.dev",
+    description: `You're looking at it! :) Around 150kb and perfect Lighthouse score.`,
+    tech: ["Typescript", "Astro", "Tailwind CSS"],
+    repo: "TopiasM/homepage",
+  },
 ];
 ---
 
@@ -26,16 +36,19 @@ const projects = [
   <span class="flex">
     <h4 class="text-3xl font-bold gradient-heading">My Projects.</h4>
   </span>
-  {
-    projects.map((d) => (
-      <ProjectContainer
-        img={d.img}
-        imgAlt={d.imgAlt}
-        href={d.href}
-        title={d.title}
-        description={d.description}
-        tech={d.tech}
-      />
-    ))
-  }
+  <div class="flex flex-col gap-6 mt-4">
+    {
+      projects.map(({ img, imgAlt, href, title, description, tech, repo }) => (
+        <ProjectContainer
+          {img}
+          {imgAlt}
+          {href}
+          {title}
+          {description}
+          {tech}
+          {repo}
+        />
+      ))
+    }
+  </div>
 </div>
