@@ -3,7 +3,7 @@ import type { AstroComponentFactory } from "astro/runtime/server/render/astro/fa
 export interface Project {
   img: ImageMetadata;
   imgAlt: string;
-  href: string;
+  url: string;
   title: string;
   description: string;
   tech: string[];
