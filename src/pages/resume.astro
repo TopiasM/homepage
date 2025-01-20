@@ -7,6 +7,8 @@ import ThemeBtns from "../components/ThemeBtns.astro";
 
 const title = "Topias Martikainen - Resume";
 const description = "My resume highlighting my experience";
+
+const resumeFile = import.meta.env.PUBLIC_RESUME_FILE;
 ---
 
 <Layout {title} {description}>
@@ -28,12 +30,14 @@ const description = "My resume highlighting my experience";
       <ResumeContent />
     </div>
     <div class="flex texture-bg mt-4 rounded">
-      <button
+      <a
         class="flex flex-row text-zinc-400 font-semibold hover:text-zinc-300 m-auto px-4 py-3 gap-2 items-end duration-150"
+        href={`/${resumeFile}`}
+        download
       >
         <DownloadSimple height="22" />
         Download PDF
-      </button>
+      </a>
     </div>
   </div>
 </Layout>
