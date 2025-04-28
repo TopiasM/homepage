@@ -1,6 +1,7 @@
 ---
 import onobooImg from "../assets/onoboo_169_compressed.png";
 import homepageImg from "../assets/homepage_169_compressed.png";
+import okGradientsImg from "../assets/ok-gradients_169_compressed.png";
 import ProjectContainer from "./ProjectContainer.astro";
 import type { Project } from "../types";
 import { underlineLinkClasses } from "../consts";
@@ -11,7 +12,8 @@ const projects: Project[] = [
     imgAlt: "Screenshot of onoboo.com homepage",
     url: "https://onoboo.com",
     title: "onoboo",
-    description: `Korean language learning platform, that is still under development.`,
+    description:
+      "Korean language learning platform, that is still under development.",
     tech: [
       "Typescript",
       "Sveltekit",
@@ -22,11 +24,20 @@ const projects: Project[] = [
     ],
   },
   {
+    img: okGradientsImg,
+    imgAlt: "Screenshot of OK gradients",
+    url: "https://ok-gradients.pages.dev",
+    title: "OK gradients",
+    description: "Tool for creating animated CSS gradients.",
+    tech: ["Typescript", "React", "Tailwind CSS", "Zustand"],
+  },
+  {
     img: homepageImg,
     imgAlt: "Screenshot of topias.dev",
     url: "https://topias.dev",
     title: "topias.dev",
-    description: `You're looking at it! :) Under 100kb and perfect Lighthouse score.`,
+    description:
+      "You're looking at it! :) Under 100kb and perfect Lighthouse score.",
     tech: ["Typescript", "Astro", "Tailwind CSS"],
     repo: "TopiasM/homepage",
   },
