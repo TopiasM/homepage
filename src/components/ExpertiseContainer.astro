@@ -1,17 +1,50 @@
 ---
 import type { ExpertiseProps as Props } from "../types";
 
-const { Icon, title, description } = Astro.props;
+const { Icon, title, description, key } = Astro.props;
 ---
 
 <div
   class="w-full sm:px-5 p-3 sm:border sm:border-dashed sm:border-neutral-800"
+  style={`--beam-rotation: ${key * 120}deg`}
 >
   <h5 class="flex flex-row text-2xl text-zinc-300 font-semibold items-center">
-    <Icon class="bg-[var(--main-green)] rounded p-0.5 size-6" />
+    <div
+      class={`icon-container bg-white/15 mt-0.5 p-0.5 flex content-center items-center align-middle overflow-hidden rounded-lg relative`}
+    >
+      <Icon
+        class={`bg-[var(--main-green)] rounded-lg p-1 size-6 bg-neutral-950 z-10`}
+      />
+    </div>
     <span class="ml-2 gradient-heading">{title}</span>
   </h5>
   <p class="text-zinc-300 text-lg mt-1 text-pretty pr-4">
     <Fragment set:html={description} />
   </p>
 </div>
+
+<style>
+  .icon-container::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: conic-gradient(
+      from var(--beam-rotation),
+      transparent 0%,
+      transparent 25%,
+      var(--main-green),
+      transparent 75%,
+      transparent 100%
+    );
+    animation: borderRotate 5s linear infinite;
+  }
+
+  @keyframes borderRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>

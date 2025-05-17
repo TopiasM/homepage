@@ -14,4 +14,5 @@ export interface ExpertiseProps {
   Icon: AstroComponentFactory;
   title: string;
   description: string;
+  key: number;
 }

@@ -3,4 +3,4 @@ export const handPath =
 export const pageClasses =
   "max-w-7xl m-auto px-[calc(2vw+0.5rem)] pt-8 xl:px-4";
 export const underlineLinkClasses =
-  "underline decoration-[var(--main-green)] font-bold decoration-4 px-1 hover:bg-[var(--main-green)] hover:no-underline hover:rounded ";
+  "underline decoration-[var(--main-green)] font-bold decoration-[3px] px-1 hover:bg-[var(--main-green)] hover:no-underline hover:rounded ";

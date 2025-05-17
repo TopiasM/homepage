@@ -38,11 +38,12 @@ const expertise = [
     class="grid lg:grid-cols-3 sm:grid-cols-2 border border-neutral-800 rounded overflow-hidden"
   >
     {
-      expertise.map((e) => (
+      expertise.map((e, k) => (
         <ExpertiseContainer
           Icon={e.icon}
           title={e.title}
           description={e.description}
+          key={k}
         />
       ))
     }
