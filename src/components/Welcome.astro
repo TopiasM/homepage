@@ -12,11 +12,19 @@ import { handPath } from "../consts";
       xmlns="http://www.w3.org/2000/svg"
       width="64"
       height="64"
+      viewBox="0 0 256 256"
       id="hello-wave"
     >
-      <clipPath id="hello-wave-path">
-        <path d={handPath}></path>
-      </clipPath>
+      <defs>
+        <clipPath id="hello-wave-path">
+          <path d={handPath}></path>
+        </clipPath>
+      </defs>
+      <rect
+        width="100%"
+        height="100%"
+        class="gradient-heading"
+        clip-path="url(#hello-wave-path)"></rect>
     </svg>
   </div>
 </div>
